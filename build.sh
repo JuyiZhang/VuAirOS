@@ -126,6 +126,11 @@ function milkv_build()
   fi
    
   clean_all
+
+  # Copy Buildroot config
+  echo "Copy Buildroot config for ${MILKV_BOARD} ..."
+  cp build/boards/cv181x/${MV_BOARD_LINK}/buildroot/${MV_BOARD}_musl_riscv64_defconfig buildroot-2021.05/configs
+
   build_all
   if [ $? -eq 0 ]; then
     print_info "Build board ${MILKV_BOARD} success!"

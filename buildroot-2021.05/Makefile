@@ -127,6 +127,9 @@ endif
 
 ifeq ($(MV_VENDOR),milkv)
 export BR2_VERSION_FULL = $(shell date +%Y%m%d-%H%M)
+# else if equal to vu2
+else ifeq ($(MV_VENDOR),vu2)
+export BR2_VERSION_FULL = $(shell date +%Y%m%d-%H%M)
 endif
 
 # List of targets and target patterns for which .config doesn't need to be read in
