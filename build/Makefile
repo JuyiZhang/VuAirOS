@@ -574,6 +574,10 @@ ifeq ($(MV_VENDOR), milkv)
 	${Q}cp -arf $(TOP_DIR)/device/$(MV_BOARD)/overlay/* $(BR_ROOTFS_DIR)/
 	${Q}cp -arf $(TOP_DIR)/device/common/br_overlay/* $(BR_ROOTFS_DIR)/
 	${Q}rm -rf $(BR_OVERLAY_DIR)
+else ifeq ($(MV_VENDOR), vu2)
+	${Q}cp -arf $(TOP_DIR)/device/common/overlay/* $(BR_ROOTFS_DIR)/
+	${Q}cp -arf $(TOP_DIR)/device/$(MV_BOARD)/overlay/* $(BR_ROOTFS_DIR)/
+	${Q}rm -rf $(BR_OVERLAY_DIR)
 endif
 	# strip
 	${Q}find $(BR_ROOTFS_DIR) -name "*.ko" -type f -printf 'striping %p\n' -exec $(CROSS_COMPILE_KERNEL)strip --strip-unneeded {} \;
@@ -588,6 +592,10 @@ ifeq ($(STORAGE_TYPE), spinand)
 	# ${Q}mkdir -p $(BR_OVERLAY_DIR)/mnt/data
 	${Q}mkdir -p $(OUTPUT_DIR)/system
 	${Q}cp -arf $(BR_OVERLAY_DIR)/mnt/system/* $(OUTPUT_DIR)/system
+
+	# copy esp32 driver to system driver Folder
+	${Q}cp -arf ${TOP_DIR}/esp-hosted-sg200x/esp_hosted_ng/host/esp32_sdio.ko $(OUTPUT_DIR)/system/ko/
+
 endif
 
 br-rootfs-pack:export TARGET_OUTPUT_DIR=$(BR_DIR)/output/$(BR_BOARD)

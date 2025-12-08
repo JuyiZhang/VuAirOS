@@ -1,0 +1,3 @@
+[submodule "esp-hosted-sg200x"]
+	path = esp-hosted-sg200x
+	url = https://github.com/JuyiZhang/esp-hosted-sg200x.git
