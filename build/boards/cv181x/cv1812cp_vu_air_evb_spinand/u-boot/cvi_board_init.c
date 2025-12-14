@@ -49,21 +49,21 @@ int cvi_board_init(void)
 {
 
 	// SPI Camera
-	mmio_write_32(0x0300101C, 0x2); //SD0_CLK, SPI0_SCK
-	mmio_write_32(0x03001020, 0x2); //SD0_CMD, SPI0_SDO
-	mmio_write_32(0x03001024, 0x2); //SD0_D0, SPI0_SDI
-	mmio_write_32(0x03001030, 0x2); //SD0_D3, SPI0_CS_X
-	mmio_write_32(0x03001034, 0x3); //Grounded SDIO CD, may consider reuse with SDNAND?
+	// mmio_write_32(0x0300101C, 0x2); //SD0_CLK, SPI0_SCK
+	// mmio_write_32(0x03001020, 0x2); //SD0_CMD, SPI0_SDO
+	// mmio_write_32(0x03001024, 0x2); //SD0_D0, SPI0_SDI
+	// mmio_write_32(0x03001030, 0x2); //SD0_D3, SPI0_CS_X
+	// mmio_write_32(0x03001034, 0x3); //Grounded SDIO CD, may consider reuse with SDNAND?
 
 	// I2C1
-	mmio_write_32(0x03001028, 0x1); //SD0_D1, IIC1_SCL
-	mmio_write_32(0x0300102C, 0x1); //SD0_D2, IIC1_SDA
+	// mmio_write_32(0x03001028, 0x1); //SD0_D1, IIC1_SCL
+	// mmio_write_32(0x0300102C, 0x1); //SD0_D2, IIC1_SDA
 	
 	// Not used PWR_EN
-	mmio_write_32(0x03001038, 0x3);
+	// mmio_write_32(0x03001038, 0x3);
 
 	//SPK_EN, NC
-	mmio_write_32(0x0300103C, 0x3);
+	// mmio_write_32(0x0300103C, 0x3);
 
 	//UART DEBUG
 	mmio_write_32(0x03001040, 0x0); //UART0_TX
