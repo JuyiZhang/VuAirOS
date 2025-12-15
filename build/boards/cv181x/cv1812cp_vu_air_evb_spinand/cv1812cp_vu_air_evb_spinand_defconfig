@@ -41,6 +41,13 @@ CONFIG_NANDFLASH_PAGESIZE=2048
 # end of Storage settings
 
 #
+# Panel Settings
+#
+CONFIG_MIPI_PANEL_SY049_1080P=y
+# end of Panel settings
+
+
+#
 # Sensor settings
 #
 

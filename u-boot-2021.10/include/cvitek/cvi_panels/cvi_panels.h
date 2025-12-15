@@ -10,6 +10,7 @@
 
 #include "cvi_i80.h"
 #include "cvi_lvds.h"
+#include "dsi_sy049_1080p.h"
 
 struct panel_desc_s {
 	char *panel_name;
@@ -31,6 +32,15 @@ static struct panel_desc_s panel_desc = {
 	.hs_timing_cfg = &hs_timing_cfg_hx8394_720x1280,
 	.dsi_init_cmds = dsi_init_cmds_hx8394_720x1280,
 	.dsi_init_cmds_size = ARRAY_SIZE(dsi_init_cmds_hx8394_720x1280)
+};
+#elif defined(MIPI_PANEL_SY049_1080P)
+#include "dsi_sy049_1080p.h"
+static struct panel_desc_s panel_desc = {
+	.panel_name = "SY049-1080p",
+	.dev_cfg = &dev_cfg_sy049_1080p,
+	.hs_timing_cfg = &hs_timing_cfg_sy049_1080p,
+	.dsi_init_cmds = dsi_init_cmds_sy049_1080p,
+	.dsi_init_cmds_size = ARRAY_SIZE(dsi_init_cmds_sy049_1080p)
 };
 #elif defined(MIPI_PANEL_ILI9881C)
 #include "dsi_ili9881c.h"
