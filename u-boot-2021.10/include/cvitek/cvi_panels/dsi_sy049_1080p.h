@@ -96,7 +96,7 @@ const struct dsc_instr dsi_init_cmds_sy049_1080p[] = {
 	{.delay = 100, .data_type = 0x05, .size = 1, .data = data_sy049_23 },
 	{.delay = 20, .data_type = 0x39, .size = 3, .data = data_sy049_24 },
 	{.delay = 0, .data_type = 0x15, .size = 2, .data = data_sy049_25 }
-
+};
 #else
 #error "_MIPI_TX_PARAM_SY049_1080P_H_ multi-delcaration!!"
 #endif // _MIPI_TX_PARAM_SY049_1080P_H_

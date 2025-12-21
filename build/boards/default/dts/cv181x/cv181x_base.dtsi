@@ -760,7 +760,7 @@
 		};
 	};
 
-	cvifb {
+	cvi_fb: cvifb {
 		compatible = "cvitek,fb";
 		memory-region = <&fb_reserved>;
 		reg = <0x0 0x0a088000 0x0 0x1000>;

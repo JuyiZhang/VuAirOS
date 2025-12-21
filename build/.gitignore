@@ -5,7 +5,7 @@ config.cmake
 *.pyc
 .config.old
 br.log
-
+boards_config
 
 # ignore dirs
 output/

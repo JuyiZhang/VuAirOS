@@ -17,6 +17,9 @@ tags
 cscope.*
 ncscope.*
 .svim
+log.txt
+log_vu
+log_vuo
 
 __pycache__
 .vscode
